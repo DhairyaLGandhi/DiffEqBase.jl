@@ -4,10 +4,12 @@ if isdefined(Base, :get_extension)
     using DiffEqBase
     import DiffEqBase: value
     import Tracker
+    import Adapt
 else
     using ..DiffEqBase
     import ..DiffEqBase: value
     import ..Tracker
+    import ..Adapt
 end
 
 DiffEqBase.value(x::Type{Tracker.TrackedReal{T}}) where {T} = T
@@ -99,7 +101,7 @@ Tracker.@grad function DiffEqBase.solve_up(prob,
         kwargs...)
     out = DiffEqBase._solve_adjoint(prob, sensealg, Tracker.data(u0), Tracker.data(p),
         SciMLBase.TrackerOriginator(), args...; kwargs...)
-    Array(out[1]), out[2]
+    convert(AbstractArray, out[1]), out[2]
 end
 
 end

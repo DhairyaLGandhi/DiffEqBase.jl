@@ -4,6 +4,7 @@ authors = ["Chris Rackauckas <accounts@chrisrackauckas.com>"]
 version = "6.149.2"
 
 [deps]
+Adapt = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
 ArrayInterface = "4fba245c-0d91-5ea0-9b3e-6abc04ee57a9"
 ConcreteStructs = "2569d6c7-a4a2-43d3-a901-331e8e4be471"
 DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
@@ -60,6 +61,7 @@ DiffEqBaseTrackerExt = "Tracker"
 DiffEqBaseUnitfulExt = "Unitful"
 
 [compat]
+Adapt = "4"
 ArrayInterface = "7.8"
 ChainRulesCore = "1"
 ConcreteStructs = "0.2.3"
